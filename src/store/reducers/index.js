@@ -10,5 +10,27 @@ export default (state =defaultState,action)=>{
     // state是组件中要使用的数据 
     // action 来区分做什么事 
     // 必须要返回一个state
+
+
+    switch (action.type) {
+      case 'num_add':
+        {
+          let newState = JSON.parse(JSON.stringify(state));
+          newState.num += action.value;
+          return newState;
+        }
+        
+      case 'num_reduce':
+        {
+          let newState = JSON.parse(JSON.stringify(state));
+          newState.num -= action.value;
+          return newState;
+        }
+    
+      default:
+        break;
+    }
+
+
     return state;
   }

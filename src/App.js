@@ -9,7 +9,9 @@ class App  extends Component{
     return (
        <div>
          数字:{this.props.num}
-
+         <br />
+         <button onClick={this.props.num_add}>+</button>
+         <button onClick={this.props.num_reduce}>-</button>
        </div>
     );
   }
@@ -22,7 +24,33 @@ const mapStateToProps = (state) => {
     num: state.num
   }
 }
-export default connect(mapStateToProps, null)(App);
+
+
+//新建一个action 和 props 的映射对象
+const mapDispatch = (dispatch) => {
+  return {
+    num_add: () => {
+      const action = {
+        type: 'num_add',
+        value: 1
+      }
+      dispatch(action);
+    },
+    num_reduce: () => {
+      const action = {
+        type: 'num_reduce',
+        value: 1
+      }
+      dispatch(action);
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatch)(App);
+
+
+// export default connect(mapStateToProps, null)(App);
 
 
 
