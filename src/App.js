@@ -1,5 +1,9 @@
 import React,{ Component } from 'react';
 
+//引入action类型
+import { NUM_ADD,NUM_REDUCE } from './store/actionTypes';
+
+
 //1.引入一个可以接受仓库的函数connent
 import { connect } from "react-redux";
 
@@ -21,7 +25,7 @@ class App  extends Component{
 // connect 第一个参数 是实现 store中的数据 和 组件中的 属性的映射
 const mapStateToProps = (state) => {
   return {
-    num: state.num
+    num: state.animalReducer.num
   }
 }
 
@@ -31,14 +35,14 @@ const mapDispatch = (dispatch) => {
   return {
     num_add: () => {
       const action = {
-        type: 'num_add',
+        type: NUM_ADD,
         value: 1
       }
       dispatch(action);
     },
     num_reduce: () => {
       const action = {
-        type: 'num_reduce',
+        type: NUM_REDUCE,
         value: 1
       }
       dispatch(action);
