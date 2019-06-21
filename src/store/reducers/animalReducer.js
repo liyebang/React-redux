@@ -1,4 +1,4 @@
-import { NUM_ADD,NUM_REDUCE } from '../actionTypes'
+// import { NUM_ADD,NUM_REDUCE } from '../actionTypes'
 
 
 const defaultState = {
@@ -6,24 +6,24 @@ const defaultState = {
 };
 export default (state=defaultState,action) => {
 
-    switch (action.type) {
-        case NUM_ADD:
-          {
-            let newState = JSON.parse(JSON.stringify(state));
-            newState.num += action.value;
-            return newState;
-          }
+    // switch (action.type) {
+    //     case NUM_ADD:
+    //       {
+    //         let newState = JSON.parse(JSON.stringify(state));
+    //         newState.num += action.value;
+    //         return newState;
+    //       }
           
-        case NUM_REDUCE:
-          {
-            let newState = JSON.parse(JSON.stringify(state));
-            newState.num -= action.value;
-            return newState;
-          }
+    //     case NUM_REDUCE:
+    //       {
+    //         let newState = JSON.parse(JSON.stringify(state));
+    //         newState.num -= action.value;
+    //         return newState;
+    //       }
       
-        default:
-          break;
-      }
+    //     default:
+    //       break;
+    //   }
 
 
     return state;
